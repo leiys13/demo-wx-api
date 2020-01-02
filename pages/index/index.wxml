@@ -1,0 +1,15 @@
+<open-data type="userAvatarUrl"></open-data>
+<open-data type="userNickName"></open-data>
+<open-data type="userGender" lang="zh_CN"></open-data>
+
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{ !hasUserInfo }}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">获取用户信息</button>
+    <block wx:else>
+      <image class="userinfo-avatar" src="{{ userInfo.avatarUrl }}" mode="cover"></image>
+      <text class="userinfo-nickname">{{ userInfo.nickName }}</text>
+      <text class="userinfo-nickname">{{ userInfo.country }}</text>
+      <open-data type="userGender" lang="zh_CN"></open-data>
+    </block>
+  </view>
+</view>
